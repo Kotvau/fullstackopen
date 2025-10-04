@@ -1,35 +1,64 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+const Header = (props) => {
+  console.log(props);
+  return (
+    <>
+      <h1>{props.course}</h1>
+    </>
+  );
+};
 
-function App() {
-  const [count, setCount] = useState(0)
+const Content = (props) => {
+  console.log(props);
+  return (
+    <>
+      <p>
+        {props.part1.name} {props.part1.exercises}
+      </p>
+      <p>
+        {props.part2.name} {props.part2.exercises}
+      </p>
+      <p>
+        {props.part3.name} {props.part3.exercises}
+      </p>
+    </>
+  );
+};
+
+const Total = (props) => {
+  console.log(props);
+  return (
+    <>
+      <p>
+        Number of exercises{" "}
+        {props.part1.exercises + props.part1.exercises + props.part1.exercises}
+      </p>
+    </>
+  );
+};
+
+const App = () => {
+  // const-määrittelyt
+  const course = "Half Stack application development";
+  const part1 = {
+    name: "Fundamentals of React",
+    exercises: 10,
+  };
+  const part2 = {
+    name: "Using props to pass data",
+    exercises: 7,
+  };
+  const part3 = {
+    name: "State of a component",
+    exercises: 14,
+  };
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Header course={course} />
+      <Content part1={part1} part2={part2} part3={part3} />
+      <Total part1={part1} part2={part2} part3={part3} />
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;

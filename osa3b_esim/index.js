@@ -2,6 +2,7 @@ const express = require("express"); // haetaan kirjasto, tuodaan Express-moduuli
 const cors = require("cors");
 const app = express(); // luodaan palvelin app luomalla express sovellus
 app.use(cors());
+app.use(express.static("dist"));
 const morgan = require("morgan");
 
 /*const requestLogger = (request, response, next) => {

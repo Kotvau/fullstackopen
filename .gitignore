@@ -141,3 +141,4 @@ vite.config.ts.timestamp-*
 
 #allow 3b dist
 !osa3b_esim/dist
+!osa3b_back/dist

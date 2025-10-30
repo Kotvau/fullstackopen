@@ -1,0 +1,7 @@
+POST http://localhost:300/api/iddd
+Content-Type: application/json
+
+{
+    "name": "Minan maaa",
+    "number": "15641654"
+}
